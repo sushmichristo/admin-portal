@@ -1,0 +1,55 @@
+<!--<section class="search-container">
+    <div class="input-field">
+        <input id="search-box" [(ngModel)]="searchText" placeholder="Search by name, email or role"
+            (input)="onSearchChange()" #search />
+    </div>
+</section>-->
+<user-search [users]="users" (userItemChanged)="userItemChanged($event)" #search></user-search>
+<main class="user-container">
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" (change)="checkAllUsers($event)" [(ngModel)]="parentCheckBox" />
+                </th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr [id]="user.id"
+                *ngFor="let user of users | searchFilter:search.searchText | pagination:pageinator.currentPage:search.searchText"
+                [class.highlight]="user.selected == true" tabindex="0" [editCell]>
+                <td>
+                    <input type="checkbox" value="{{ user.id }}" [(ngModel)]="user.selected" />
+                </td>
+                <td [contentEditable]='user.editable ? true : false' (input)="updateUser($event, user, 'name')"
+                    [textContent]="user.name" tabindex="0">{{
+                    user.name }}</td>
+                <td [contentEditable]='user.editable? true : false' (input)="updateUser($event, user, 'email')"
+                    [textContent]="user.email" tabindex="0">{{
+                    user.email }}</td>
+                <td [contentEditable]='user.editable ? true : false' (input)="updateUser($event, user, 'role')"
+                    [textContent]="user.role" tabindex="0">{{
+                    user.role }}</td>
+                <td>
+                    <button class="action-btn" type="button" (click)="editUser(user)"><i
+                            class="fa fa-edit fa-2x"></i></button>
+                    <button class="action-btn delete-btn" type="button" (click)="deleteUser(user)"><i
+                            class="fa fa-trash fa-2x"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+<footer class="footer-wrapper">
+    <div class="btn-wrap">
+        <button class="delete-selected-btn" type="button" (click)="deleteSelectedAll()">Delete Selected</button>
+    </div>
+    <div class="page-wrap">
+        <pagination [noOfUsers]="this.noOfUsers" #pageinator>
+        </pagination>
+    </div>
+</footer>

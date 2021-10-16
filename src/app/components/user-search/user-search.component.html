@@ -1,0 +1,6 @@
+<section class="search-container">
+    <div class="input-field">
+        <input id="search-box" [(ngModel)]="searchText" placeholder="Search by name, email or role"
+            (input)="onSearchChange()" #search />
+    </div>
+</section>

@@ -1,0 +1,7 @@
+<div *ngIf="noOfUsers">
+    <a (click)="firstPage()"><span>&#60;</span><span>&#60;</span></a>
+    <a (click)="previousPage()"><span>&#60;</span></a>
+    <a *ngFor="let el of pages" [ngClass]="{'active' : active == el}" (click)="active = el">{{ el }}</a>
+    <a (click)="nextPage()"><span>&#62;</span></a>
+    <a (click)="lastPage()"><span>&#62;</span><span>&#62;</span></a>
+</div>

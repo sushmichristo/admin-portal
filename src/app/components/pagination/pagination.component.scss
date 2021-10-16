@@ -1,0 +1,17 @@
+#pagination {
+  display: flex;
+}
+
+a {
+  padding: 10px 20px;
+  margin: 2px;
+  background: #ccc;
+  border: 1px solid #efefef;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.active {
+  color: #e2e2e2;
+  background: #2e2e2e;
+}
