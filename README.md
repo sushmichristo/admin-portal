@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
+Developed this admin portal without using any external or 3rd party library. 
+Implemented Searching and pagination using angular pipe.
+Created 3 component. 1) UserComponent - Parent - To display the page with table of users
+2) UserSearch Component - To search the users
+3) PaginationComponent - To navigate to different pages
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
