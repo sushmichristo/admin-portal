@@ -1,8 +1,7 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 import { PaginationComponent } from '../pagination/pagination.component';
-import { PaginationPipe } from 'src/app/pipes/pagination.pipe';
 
 @Component({
   selector: 'users',
@@ -104,6 +103,5 @@ export class UsersComponent implements OnInit {
       this.parentCheckBox = !this.parentCheckBox;
       this.noOfUsers = this.users.length;
     }
-    //this.users = this.users.slice(10 * (page - 1), 10 * (page)).filter((item) => !item.hasOwnProperty('selected'));
   }
 }
