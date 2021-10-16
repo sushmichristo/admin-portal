@@ -36,10 +36,6 @@ export class UsersComponent implements OnInit {
     );
   }
 
-  keyDown() {
-    console.log('keydown');
-  }
-
   userItemChanged(userItem: any) {
     this.noOfUsers = userItem.noOfUser;
     this.searchTextAvailable = userItem.searchText && userItem.searchText != '' ? true : false;

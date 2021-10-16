@@ -1,5 +1,15 @@
 # AdminPortal
 
+Developed this admin portal without using any external or 3rd party library.
+Implemented Searching and pagination using angular pipe.
+Created 3 component.
+
+1. UserComponent - Parent - To display the page with table of users
+2. UserSearch Component - To search the users
+3. PaginationComponent - To navigate to different pages
+
+Testcases - 9 base test cases passed. As not having time, couldn't write test cases.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## Development server
